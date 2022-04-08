@@ -1,17 +1,16 @@
-#include <stdio.h
-#include "vetor_int.h"
-void print_vector(int a[], int tamanho){
-  printf("{ ");
-  int i;
-  for(i=0; i<tamanho ; ++i)
-    printf("%d",a[i]);
-  printf("}\n");
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include "ll_int.h"
 int main(){
-  int a1[5000], capacidade=5000, tamanho=0;
+  struct ll_int *l01=ll_int_create();
   int i;
-  for(i=0; i<10 ; ++i)
-     tamanho=append_int(a1, tamanho, capacidade, i*3);
-  printf_vector(a1,tamanho);
+  for(i=0 ; i<5 ; ++i)
+    ll_int_inserir_inicio(l01,i*5);
+  print_list(l01);
+  printf("size: %u\n",ll_int_size(l01));
   return 0;
-}
+  }
+ 
+
+ 
+  
